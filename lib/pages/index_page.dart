@@ -56,7 +56,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
               icon: Icon(Icons.account_circle), label: '我的'),
         ],
         type: BottomNavigationBarType.fixed,
-        fixedColor: Colors.blue,
+        unselectedItemColor: Color(0xff666666),
+        fixedColor: Color(0xffA52815),
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {

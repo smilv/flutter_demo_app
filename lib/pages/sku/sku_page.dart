@@ -14,8 +14,23 @@ class SkuPage extends StatelessWidget {
         title: Text('分类'),
       ),
       body: Container(
-        child: Text('分类'),
-      ),
+          child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Container(
+              height: 38.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(19.0)),
+                color: Color(0xffEDEDED),
+              ),
+              child: Row(
+                children: [],
+              ),
+            ),
+          )
+        ],
+      )),
     );
   }
 }
