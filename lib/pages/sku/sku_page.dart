@@ -14,20 +14,47 @@ class SkuPage extends StatelessWidget {
         title: Text('分类'),
       ),
       body: Container(
+          // color: Colors.white,
           child: Column(
         children: [
-          Padding(
+          Container(
             padding: EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(width: 1.0, color: Color(0xFFEDEDED))),
+            ),
             child: Container(
               height: 38.0,
+              padding: EdgeInsets.only(left: 12.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(19.0)),
                 color: Color(0xffEDEDED),
               ),
               child: Row(
-                children: [],
+                children: [
+                  Icon(
+                    Icons.search,
+                    color: Color(0xff535353),
+                  ),
+                  Text(
+                    "茅台",
+                    style: TextStyle(color: Color(0xff666666)),
+                  ),
+                ],
               ),
             ),
+          ),
+          Row(
+            children: [
+              Container(
+                width: 110.0,
+                height: 100.0,
+                color: Colors.red,
+              ),
+              Container(
+                color: Colors.green,
+              ),
+            ],
           )
         ],
       )),
