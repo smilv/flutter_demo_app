@@ -44,20 +44,57 @@ class SkuPage extends StatelessWidget {
               ),
             ),
           ),
-          Row(
-            children: [
+          Expanded(
+            child: (Row(children: [
               Container(
-                width: 110.0,
-                height: 100.0,
-                color: Colors.red,
+                width: 100.0,
+                decoration: BoxDecoration(
+                    border: Border(
+                  right: BorderSide(width: 1.0, color: Color(0xFFEDEDED)),
+                )),
+                child: ListView.builder(
+                    itemCount: 10,
+                    itemBuilder: (BuildContext context, int index) {
+                      return _leftView(index);
+                    }),
               ),
-              Container(
-                color: Colors.green,
-              ),
-            ],
+              Expanded(
+                  child: Container(
+                color: Colors.blue,
+                child: ListView.builder(
+                    itemCount: 20,
+                    itemBuilder: (BuildContext context, int index) {
+                      return _rightView(index);
+                    }),
+              )),
+            ])),
           )
         ],
       )),
     );
+  }
+
+  Widget _leftView(int index) {
+    return Container(
+        margin: EdgeInsets.only(top: 18.0, bottom: 18.0),
+        padding: EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
+        decoration: BoxDecoration(
+            border: Border(
+          left: BorderSide(width: 4.0, color: Color(0xFFcc3e28)),
+        )),
+        child: Center(
+          child: Text("飞天茅台",
+              style: TextStyle(
+                color: Color(0xFFcc3e28),
+              )),
+        ));
+  }
+
+  Widget _rightView(int index) {
+    return Container(
+        margin: EdgeInsets.all(16.0),
+        child: Text(
+          "飞天茅台飞天茅台台$index",
+        ));
   }
 }
