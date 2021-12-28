@@ -47,7 +47,7 @@ class SkuPage extends StatelessWidget {
           Expanded(
             child: (Row(children: [
               Container(
-                width: 100.0,
+                width: 90.0,
                 decoration: BoxDecoration(
                     border: Border(
                   right: BorderSide(width: 1.0, color: Color(0xFFEDEDED)),
@@ -60,7 +60,6 @@ class SkuPage extends StatelessWidget {
               ),
               Expanded(
                   child: Container(
-                color: Colors.blue,
                 child: ListView.builder(
                     itemCount: 20,
                     itemBuilder: (BuildContext context, int index) {
@@ -77,13 +76,16 @@ class SkuPage extends StatelessWidget {
   Widget _leftView(int index) {
     return Container(
         margin: EdgeInsets.only(top: 18.0, bottom: 18.0),
-        padding: EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
+        padding: EdgeInsets.only(
+          top: 8.0,
+          bottom: 8.0,
+        ),
         decoration: BoxDecoration(
             border: Border(
           left: BorderSide(width: 4.0, color: Color(0xFFcc3e28)),
         )),
         child: Center(
-          child: Text("飞天茅台",
+          child: Text("飞天茅台放",
               style: TextStyle(
                 color: Color(0xFFcc3e28),
               )),
@@ -92,9 +94,49 @@ class SkuPage extends StatelessWidget {
 
   Widget _rightView(int index) {
     return Container(
-        margin: EdgeInsets.all(16.0),
-        child: Text(
-          "飞天茅台飞天茅台台$index",
-        ));
+        margin: EdgeInsets.all(10.0),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Image.network(
+            "http://gedevip.oss-cn-beijing.aliyuncs.com/images/4670443441584845205064.png",
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          Container(
+              margin: EdgeInsets.only(
+                  top: 20.0, bottom: 8.0, left: 10.0, right: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: Text(
+                      "新品推荐",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  Wrap(
+                    spacing: 8.0,
+                    runSpacing: 10.0,
+                    children: [
+                      Column(
+                        children: [
+                          Image.network(
+                            "http://gedevip.oss-cn-beijing.aliyuncs.com/images/21426689171614150280148.png",
+                            width: 58.0,
+                            height: 58.0,
+                          ),
+                          Container(
+                            width: 58.0,
+                            margin: EdgeInsets.only(top: 4.0),
+                            child:
+                                Text("红星二锅头51度", textAlign: TextAlign.center),
+                          )
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              )),
+        ]));
   }
 }
