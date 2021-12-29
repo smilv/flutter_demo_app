@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-
-import 'package:flutter_demo_app/pages/home/home_page.dart';
 import 'package:flutter_demo_app/pages/index_page.dart';
 
 void main() {
@@ -14,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Startup Name Generator',
         theme: ThemeData(
-          primaryColor: Colors.white,
+          primaryColor: Color(0xff121212),
         ),
         home: IndexPage());
   }

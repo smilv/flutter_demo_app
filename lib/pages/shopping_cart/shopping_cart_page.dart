@@ -12,6 +12,7 @@ class ShoppingCartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('购物车'),
+        brightness: Brightness.dark,
       ),
       body: Container(
         child: Text('购物车'),

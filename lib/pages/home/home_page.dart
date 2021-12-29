@@ -11,7 +11,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('歌德优选'),
+        title: Text(
+          '歌德老酒行',
+        ),
+        backgroundColor: Color(0xffA52815),
+        brightness: Brightness.dark,
       ),
       body: Container(
         child: Text('首页'),

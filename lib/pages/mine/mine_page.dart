@@ -12,6 +12,7 @@ class MinePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('我的'),
+        brightness: Brightness.dark,
       ),
       body: Container(
         child: Text('我的'),

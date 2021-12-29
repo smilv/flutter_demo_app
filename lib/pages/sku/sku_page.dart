@@ -12,6 +12,7 @@ class SkuPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('分类'),
+        brightness: Brightness.dark,
       ),
       body: Container(
           // color: Colors.white,
@@ -73,6 +74,7 @@ class SkuPage extends StatelessWidget {
     );
   }
 
+  ///左侧列表
   Widget _leftView(int index) {
     return Container(
         margin: EdgeInsets.only(top: 18.0, bottom: 18.0),
@@ -92,6 +94,7 @@ class SkuPage extends StatelessWidget {
         ));
   }
 
+  ///右侧列表
   Widget _rightView(int index) {
     return Container(
         margin: EdgeInsets.all(10.0),
