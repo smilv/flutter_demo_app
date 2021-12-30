@@ -6,7 +6,20 @@
 
 import 'package:flutter/material.dart';
 
-class SkuPage extends StatelessWidget {
+class SkuPage extends StatefulWidget {
+  @override
+  _SkuPageState createState() => _SkuPageState();
+}
+
+class _SkuPageState extends State<SkuPage> {
+  int _activeIndex = 0;
+
+  void _leftTap(int index) {
+    setState(() {
+      _activeIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +28,6 @@ class SkuPage extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       body: Container(
-          // color: Colors.white,
           child: Column(
         children: [
           Container(
@@ -76,22 +88,30 @@ class SkuPage extends StatelessWidget {
 
   ///左侧列表
   Widget _leftView(int index) {
-    return Container(
-        margin: EdgeInsets.only(top: 18.0, bottom: 18.0),
-        padding: EdgeInsets.only(
-          top: 8.0,
-          bottom: 8.0,
-        ),
-        decoration: BoxDecoration(
-            border: Border(
-          left: BorderSide(width: 4.0, color: Color(0xFFcc3e28)),
-        )),
-        child: Center(
-          child: Text("飞天茅台放",
-              style: TextStyle(
-                color: Color(0xFFcc3e28),
-              )),
-        ));
+    return GestureDetector(
+      child: Container(
+          margin: EdgeInsets.only(top: 18.0, bottom: 18.0),
+          padding: EdgeInsets.only(
+            top: 8.0,
+            bottom: 8.0,
+          ),
+          decoration: BoxDecoration(
+              border: Border(
+            left: BorderSide(
+                width: 4.0,
+                color:
+                    _activeIndex == index ? Color(0xFFcc3e28) : Colors.white),
+          )),
+          child: Center(
+            child: Text("飞天茅台",
+                style: _activeIndex == index
+                    ? TextStyle(color: Color(0xFFcc3e28))
+                    : null),
+          )),
+      onTap: () {
+        _leftTap(index);
+      },
+    );
   }
 
   ///右侧列表
