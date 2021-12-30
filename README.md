@@ -1,4 +1,4 @@
-# flutter_demo_app
+# 电商类flutter app
 
 A new Flutter application.
 
