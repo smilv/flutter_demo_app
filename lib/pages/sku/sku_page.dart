@@ -14,6 +14,19 @@ class SkuPage extends StatefulWidget {
 class _SkuPageState extends State<SkuPage> {
   int _activeIndex = 0;
 
+  /// 右侧滚动控制器
+  ScrollController _scrollController = ScrollController();
+
+  /// 重写生命周期方法
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      print("监听滚动的位置 ${_scrollController.offset}");
+    });
+  }
+
+  /// 左侧点击
   void _leftTap(int index) {
     setState(() {
       _activeIndex = index;
@@ -75,6 +88,7 @@ class _SkuPageState extends State<SkuPage> {
                   child: Container(
                 child: ListView.builder(
                     itemCount: 20,
+                    controller: _scrollController,
                     itemBuilder: (BuildContext context, int index) {
                       return _rightView(index);
                     }),
@@ -103,7 +117,7 @@ class _SkuPageState extends State<SkuPage> {
                     _activeIndex == index ? Color(0xFFcc3e28) : Colors.white),
           )),
           child: Center(
-            child: Text("飞天茅台",
+            child: Text("飞天茅台$index",
                 style: _activeIndex == index
                     ? TextStyle(color: Color(0xFFcc3e28))
                     : null),
@@ -133,7 +147,7 @@ class _SkuPageState extends State<SkuPage> {
                   Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      "新品推荐",
+                      "新品推荐$index",
                       style: TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
