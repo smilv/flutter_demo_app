@@ -4,6 +4,8 @@
 // @LastEditors: zhaobin
 // @LastEditTime: 12/6/21 3:15 PM
 
+/// todo: 左侧点击右侧滚动定位、右侧滚动左侧定位
+
 import 'package:flutter/material.dart';
 
 class SkuPage extends StatefulWidget {
@@ -26,11 +28,23 @@ class _SkuPageState extends State<SkuPage> {
     });
   }
 
+  @override
+  void dispose() {
+    //为了避免内存泄露，需要调用_controller.dispose
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   /// 左侧点击
   void _leftTap(int index) {
     setState(() {
       _activeIndex = index;
     });
+    _scrollController.animateTo(
+      300.0,
+      duration: Duration(milliseconds: 300),
+      curve: Curves.ease,
+    );
   }
 
   @override
